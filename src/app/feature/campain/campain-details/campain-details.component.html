@@ -1,0 +1,18 @@
+<button class="btn btn-primary" (click)="changeMode()">Edit</button>
+<div *ngIf="true">
+  <h1>ID: {{ campainId }}</h1>
+  <h1>
+    Title:<div *ngIf="!editing">{{ campain?.Name }}</div>
+  </h1>
+  <input *ngIf="editing" (value)="(campain?.Name)" type="text" />
+  <h2>
+    description:
+    <div *ngIf="!editing">{{ campain?.Description }}</div>
+    <input *ngIf="editing" (value)="(campain?.Description)" type="text" />
+  </h2>
+  <h2 *ngIf="campain?.DMNotes || editing">
+    dmNotes:
+    <div *ngIf="!editing">{{ campain?.DMNotes }}</div>
+    <input *ngIf="editing" (value)="(campain?.DMNotes)" type="text" />
+  </h2>
+</div>
