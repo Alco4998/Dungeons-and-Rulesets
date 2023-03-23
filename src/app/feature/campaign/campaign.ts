@@ -1,5 +1,5 @@
-export class Campain {
-    CampainId!: number;
+export class Campaign {
+    CampaignId!: number;
     Name!: string;
     Description!: string;
     DMNotes?: string;

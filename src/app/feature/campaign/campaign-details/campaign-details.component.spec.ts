@@ -7,15 +7,15 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 
-import { HomePageComponent } from './home-page.component';
+import { CampaignDetailsComponent } from './campaign-details.component';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('CampaignDetailsComponent', () => {
+  let component: CampaignDetailsComponent;
+  let fixture: ComponentFixture<CampaignDetailsComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [HomePageComponent],
+      declarations: [CampaignDetailsComponent],
       imports: [
         NoopAnimationsModule,
         LayoutModule,
@@ -29,7 +29,7 @@ describe('HomePageComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(CampaignDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

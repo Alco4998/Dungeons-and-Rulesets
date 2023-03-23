@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CampainDetailsComponent } from './feature/campain/campain-details/campain-details.component';
+import { CampaignDetailsComponent } from './feature/Campaign/campaign-details/campaign-details.component';
 import { HomePageComponent } from './feature/home/home-page/home-page.component';
 
 const routes: Routes = [
   { path: "home", component: HomePageComponent },
-  { path: "campain/:id", component: CampainDetailsComponent },
-  { path: "**", redirectTo: "/home" }
+  { path: "campaign/:id", component: CampaignDetailsComponent },
+  { path: "**", redirectTo: "/home" },
 ];
 
 @NgModule({
