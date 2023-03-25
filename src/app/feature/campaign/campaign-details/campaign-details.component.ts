@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs/operators';
-import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
+import { ActivatedRoute } from '@angular/router';
+import { Campaign } from '../Campaign';
+import { CampaignDataService } from '../campaign-data.service';
 
 @Component({
   selector: 'app-campaign-details',
@@ -8,11 +9,20 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./campaign-details.component.scss']
 })
 export class CampaignDetailsComponent {
-  cards = [ 
+  public campaign?: Campaign;
+  cards = [
     {
       title: "Rmr 5e",
       description: "War wick is after the big bad world",
       DMNotes: "hehe i am going to TPK them",
     }
-  ]
+  ];
+
+  constructor(
+    private campaignDataService: CampaignDataService,
+    route: ActivatedRoute
+  ) {
+    const campaignId = route.snapshot.params["id"]
+    this.campaign = this.campaignDataService.getCampaignById(campaignId) 
+  };
 }

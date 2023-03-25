@@ -15,11 +15,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { HomePageComponent } from './feature/home/home-page/home-page.component';
+import { ProfilePageComponent } from './feature/Users/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

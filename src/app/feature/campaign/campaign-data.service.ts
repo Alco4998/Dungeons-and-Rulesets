@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Campaign } from './campaign';
+import { Campaign } from './Campaign';
 
 @Injectable({
   providedIn: 'root'
