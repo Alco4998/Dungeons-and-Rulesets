@@ -1,7 +1,7 @@
 export class Campaign {
-    CampaignId!: number;
-    Name!: string;
-    Description!: string;
+    campaignId!: number;
+    name!: string;
+    description!: string;
     DMNotes?: string;
     // Players
     // Rules

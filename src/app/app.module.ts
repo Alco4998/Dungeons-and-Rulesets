@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CampaignModule } from './feature/Campaign/Campaign.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -14,13 +13,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
-import { HomePageComponent } from './feature/home/home-page/home-page.component';
 import { ProfilePageComponent } from './feature/Users/profile-page/profile-page.component';
+import { HomeModule } from './feature/home/home.module';
+import { CampaignModule } from './feature/campaign/campaign.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
     ProfilePageComponent,
   ],
   imports: [
@@ -37,6 +36,8 @@ import { ProfilePageComponent } from './feature/Users/profile-page/profile-page.
     MatListModule,
     MatGridListModule,
     MatMenuModule,
+    HomeModule,
+    CampaignModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

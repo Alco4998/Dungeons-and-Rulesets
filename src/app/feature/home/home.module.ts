@@ -9,11 +9,22 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { HomePageComponent } from './home-page/home-page.component';
+import { HomeCampaignCardComponent } from './home-campaign-card/home-campaign-card.component';
+import { HomeCharactersCardComponent } from './home-characters-card/home-characters-card.component';
+import { RouterModule } from '@angular/router';
+import { CampaignModule } from '../campaign/campaign.module';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomePageComponent,
+    HomeCampaignCardComponent,
+    HomeCharactersCardComponent,
+  ],
   imports: [
     CommonModule,
+    RouterModule,
+    CampaignModule,
     MatCardModule,
     MatToolbarModule,
     LayoutModule,

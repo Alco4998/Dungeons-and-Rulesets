@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Campaign } from '../Campaign';
+import { Campaign } from '../campaign';
 import { CampaignDataService } from '../campaign-data.service';
 
 @Component({
@@ -10,19 +10,13 @@ import { CampaignDataService } from '../campaign-data.service';
 })
 export class CampaignDetailsComponent {
   public campaign?: Campaign;
-  cards = [
-    {
-      title: "Rmr 5e",
-      description: "War wick is after the big bad world",
-      DMNotes: "hehe i am going to TPK them",
-    }
-  ];
+  public isEditing = false;
 
   constructor(
     private campaignDataService: CampaignDataService,
     route: ActivatedRoute
   ) {
     const campaignId = route.snapshot.params["id"]
-    this.campaign = this.campaignDataService.getCampaignById(campaignId) 
+    this.campaign = this.campaignDataService.getCampaignById(campaignId as number) 
   };
 }
