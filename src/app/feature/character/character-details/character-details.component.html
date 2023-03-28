@@ -1,0 +1,23 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile [colspan]="2" [rowspan]="1">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{character!.name}}
+          </mat-card-title>
+          <mat-slide-toggle class="edit-slider" (toggleChange)="isEditing = !isEditing"> Edit
+          </mat-slide-toggle>
+        </mat-card-header>
+        <mat-card-content *ngIf="isEditing" class="dashboard-card-content">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput #name [value]="character!.name" (change)="character!.name = name.value">
+          </mat-form-field> <br>
+          <button mat-raised-button class="save-button">test</button>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

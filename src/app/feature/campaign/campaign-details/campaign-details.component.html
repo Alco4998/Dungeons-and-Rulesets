@@ -4,24 +4,40 @@
     <mat-grid-tile [colspan]="2" [rowspan]="1">
       <mat-card class="dashboard-card">
         <mat-card-header>
-          <mat-card-title *ngIf="!isEditing" 
-          style="width: 100%;">
+          <mat-card-title>
             {{campaign!.name}}
           </mat-card-title>
-          <mat-slide-toggle style="margin-left: auto;"
-            [checked]="isEditing"> Edit
+          <mat-slide-toggle class="edit-slider" (toggleChange)="isEditing = !isEditing"> Edit
           </mat-slide-toggle>
         </mat-card-header>
-        <mat-card-content *ngIf="!isEditing" class="dashboard-card-content">
+        <mat-card-content *ngIf="isEditing; else display" class="dashboard-card-content">
+          <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput #name [value]="campaign!.name" (change)="campaign!.name = name.value">
+          </mat-form-field> <br>
           <mat-form-field appearance="fill">
             <mat-label>Description</mat-label>
-            <input matInput  [value]="campaign!.description"/>
+            <input matInput #description [value]="campaign!.description"
+              (change)="campaign!.description = description.value" />
           </mat-form-field> <br>
           <mat-form-field appearance="fill">
             <mat-label>DM's Notes</mat-label>
-            <input matInput  [value]="campaign!.DMNotes ?? ''"/>
+            <input matInput #notes [value]="campaign!.DMNotes ?? ''" (change)="campaign!.DMNotes = notes.value" />
           </mat-form-field>
         </mat-card-content>
+
+        <ng-template #display>
+          <mat-card-content class="dashboard-card-content">
+            <div class="display-form">
+              <p>{{campaign!.description}}</p>
+            </div>
+
+            <div class="display-form" *ngIf="campaign!.DMNotes">
+              <h3>DM's Notes:</h3>
+              <p>{{campaign!.DMNotes}}</p>
+            </div>
+          </mat-card-content>
+        </ng-template>
       </mat-card>
     </mat-grid-tile>
   </mat-grid-list>

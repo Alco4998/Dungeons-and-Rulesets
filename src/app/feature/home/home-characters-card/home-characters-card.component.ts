@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Character } from '../../character/character';
+import { CharacterDataService } from '../../character/character-data.service';
 
 @Component({
   selector: 'app-home-characters-card',
@@ -6,5 +8,11 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeCharactersCardComponent {
-  constructor() { }
+  public characters: Character[];
+
+  constructor(
+    characterDataService: CharacterDataService,
+  ) { 
+    this.characters = characterDataService.getAllCharacters();
+  }
 }

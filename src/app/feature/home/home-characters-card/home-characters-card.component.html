@@ -5,6 +5,9 @@
         </mat-card-title>
     </mat-card-header>
     <mat-card-content class="dashboard-card-content">
-        <div>Card Content Here</div>
+        <mat-nav-list>
+            <a mat-list-item *ngFor="let character of characters"
+                [routerLink]="['/character',character.characterId]">{{character.name}}</a>
+        </mat-nav-list>
     </mat-card-content>
 </mat-card>

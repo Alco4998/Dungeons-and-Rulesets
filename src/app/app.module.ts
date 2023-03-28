@@ -16,6 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ProfilePageComponent } from './feature/Users/profile-page/profile-page.component';
 import { HomeModule } from './feature/home/home.module';
 import { CampaignModule } from './feature/campaign/campaign.module';
+import { CharacterModule } from './feature/character/character.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { CampaignModule } from './feature/campaign/campaign.module';
     MatMenuModule,
     HomeModule,
     CampaignModule,
+    CharacterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
