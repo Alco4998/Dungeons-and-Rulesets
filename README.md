@@ -3,8 +3,8 @@
 ## MVP
 1. Home Page
 2. Campaigns
-    - Details & Edit Page
-    - Link Campaign
+    - Details & Edit Page  *✔️
+    - Link Campaign 
     - Data Service
     - Model
         - Rules
@@ -22,3 +22,14 @@
     - Authorisation Service
         - Only for DMs Notes
 5. Data Access Layer
+    - Campaign
+        - GetAllCampaign ✔️
+        - (Get) CampaignById ✔️
+        - (Update) CampaignById
+        - CreateCamapaign ✔️
+    - Character
+        - GetAllCharacters
+        - GetCharacterbyId
+        - GetCharactersbyCampaignId
+        - PostCharacter
+        - PutCharacter
