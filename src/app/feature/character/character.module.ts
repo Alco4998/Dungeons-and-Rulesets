@@ -10,12 +10,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
+import { CharacterLinkComponent } from './character-link/character-link.component';
 
 
 
 @NgModule({
   declarations: [
     CharacterDetailsComponent,
+    CharacterLinkComponent,
   ],
   imports: [
     CommonModule,
@@ -31,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
   ],
   exports: [
     CharacterDetailsComponent,
+    CharacterLinkComponent,
   ]
 })
 export class CharacterModule { }

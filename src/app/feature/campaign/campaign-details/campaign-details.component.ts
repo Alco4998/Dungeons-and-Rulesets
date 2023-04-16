@@ -1,6 +1,7 @@
 import { Component, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TextChange } from 'typescript';
+import { CharacterDataService } from '../../character/character-data.service';
 import { Campaign } from '../campaign';
 import { CampaignDataService } from '../campaign-data.service';
 
@@ -14,21 +15,26 @@ export class CampaignDetailsComponent {
   public isEditing = false;
 
   constructor(
-    private campaignDataService: CampaignDataService,
+    campaignDataService: CampaignDataService,
+    characterDataService: CharacterDataService,
     route: ActivatedRoute
   ) {
     const campaignId = route.snapshot.params["id"]
-    this.campaign = this.campaignDataService.getCampaignById(campaignId as number)
+    this.campaign = campaignDataService.getCampaignById(campaignId as number)
+
+    this.campaign!.players = characterDataService.getCharactersByCampaignId(campaignId);
   };
 
-  public updateDescription(thing: string) {
-    if (thing != this.campaign?.description) {
-      this.campaign!.description = thing;
+  public updateDescription(description: string) {
+    if (description != this.campaign?.description) {
+      this.campaign!.description = description;
       console.log(this.campaign?.description)
     }
   }
 
-  public updateDMNotes(this: any) {
-
+  public updateDMNotes(notes: string) {
+    if (notes != this.campaign?.DMNotes) {
+      this.campaign!.DMNotes = notes
+    }
   }
 }

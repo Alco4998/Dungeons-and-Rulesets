@@ -8,10 +8,14 @@ export class CharacterDataService {
   private data: Character[] = [
     {
       characterId: 1,
+      campaignId: 1,
+      ownerId: 1,
       name: "Volksa"
     },
     {
       characterId: 2,
+      campaignId: 2,
+      ownerId: 1,
       name: "Warven"
     }
   ]
@@ -24,5 +28,9 @@ export class CharacterDataService {
 
   public getCharacterById(characterId: number) {
     return this.data.find(c => c.characterId == characterId);
+  }
+
+  public getCharactersByCampaignId(campaignId: number) {
+    return this.data.filter(c => c.campaignId == campaignId);
   }
 }

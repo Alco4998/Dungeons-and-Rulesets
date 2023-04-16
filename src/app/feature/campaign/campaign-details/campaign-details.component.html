@@ -25,7 +25,6 @@
             <input matInput #notes [value]="campaign!.DMNotes ?? ''" (change)="campaign!.DMNotes = notes.value" />
           </mat-form-field>
         </mat-card-content>
-
         <ng-template #display>
           <mat-card-content class="dashboard-card-content">
             <div class="display-form">
@@ -36,6 +35,12 @@
               <h3>DM's Notes:</h3>
               <p>{{campaign!.DMNotes}}</p>
             </div>
+
+            <mat-list *ngIf="campaign!.players">
+              <mat-list-item *ngFor="let player of campaign!.players">
+                <app-character-link [character]="player"></app-character-link>
+              </mat-list-item>
+            </mat-list>
           </mat-card-content>
         </ng-template>
       </mat-card>

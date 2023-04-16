@@ -1,9 +1,11 @@
+import { Character } from "../character/character";
+
 export class Campaign {
     campaignId!: number;
     name!: string;
     description!: string;
     DMNotes?: string;
-    // Players
+    players?: Character[];
     // Rules
     // NPCs
     // Encounters

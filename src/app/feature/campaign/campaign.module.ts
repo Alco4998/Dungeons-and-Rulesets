@@ -11,6 +11,8 @@ import { CampaignLinkComponent } from './campaign-link/campaign-link.component';
 import { RouterModule } from '@angular/router';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { CharacterModule } from '../character/character.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { MatInputModule } from '@angular/material/input';
     LayoutModule,
     MatSlideToggleModule,
     MatInputModule,
+    MatListModule,
+    CharacterModule,
   ],
   exports: [
     CampaignDetailsComponent,
