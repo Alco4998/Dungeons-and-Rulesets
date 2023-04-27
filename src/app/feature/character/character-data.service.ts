@@ -1,36 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Character as Character } from './character';
+import { HttpClient } from '@angular/common/http';
+import { characterRequest } from './character-requests';
+import { OracleResponse } from '../data-service/response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterDataService {
-  private data: Character[] = [
-    {
-      characterId: 1,
-      campaignId: 1,
-      ownerId: 1,
-      name: "Volksa"
-    },
-    {
-      characterId: 2,
-      campaignId: 2,
-      ownerId: 1,
-      name: "Warven"
-    }
-  ]
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  constructor() { }
-
-  public getAllCharacters() {
-    return this.data;
+  public getAllCharacters$() {
+    return this.http.get<OracleResponse<Character>>(characterRequest.readAll)
   }
 
-  public getCharacterById(characterId: number) {
-    return this.data.find(c => c.characterId == characterId);
-  }
-
-  public getCharactersByCampaignId(campaignId: number) {
-    return this.data.filter(c => c.campaignId == campaignId);
+  public getCharacterById$(character_Id: number) {
+    return this.http.get<OracleResponse<Character>>(characterRequest.read + character_Id.toString())
   }
 }

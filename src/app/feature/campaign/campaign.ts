@@ -1,7 +1,7 @@
 import { Character } from "../character/character";
 
 export class Campaign {
-    campaignId!: number;
+    campaign_id!: number;
     name!: string;
     description!: string;
     DMNotes?: string;

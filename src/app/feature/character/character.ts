@@ -1,7 +1,5 @@
 export class Character {
-    characterId!: number
+    character_id!: number
     campaignId!: number
-    ownerId!: number
     name!: string
-    fileUUID?: string
 }

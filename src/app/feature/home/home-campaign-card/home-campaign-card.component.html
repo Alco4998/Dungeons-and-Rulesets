@@ -6,8 +6,8 @@
     </mat-card-header>
     <mat-card-content class="dashboard-card-content">
         <mat-nav-list>
-            <a mat-list-item *ngFor="let campaign of campaigns"
-                [routerLink]="['/campaign',campaign.campaignId]">{{campaign.name}}</a>
+            <a mat-list-item *ngFor="let campaign of campaigns$ | async"
+                [routerLink]="['/campaign',campaign.campaign_id]">{{campaign.name}}</a>
         </mat-nav-list>
     </mat-card-content>
 </mat-card>

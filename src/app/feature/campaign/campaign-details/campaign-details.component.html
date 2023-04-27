@@ -5,7 +5,7 @@
       <mat-card class="dashboard-card">
         <mat-card-header>
           <mat-card-title>
-            {{campaign!.name}}
+            {{campaign.name}}
           </mat-card-title>
           <mat-slide-toggle class="edit-slider" (toggleChange)="isEditing = !isEditing"> Edit
           </mat-slide-toggle>
@@ -28,7 +28,7 @@
         <ng-template #display>
           <mat-card-content class="dashboard-card-content">
             <div class="display-form">
-              <p>{{campaign!.description}}</p>
+              <p>{{campaign.description}}</p>
             </div>
 
             <div class="display-form" *ngIf="campaign!.DMNotes">

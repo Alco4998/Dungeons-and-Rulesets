@@ -17,6 +17,7 @@ import { ProfilePageComponent } from './feature/Users/profile-page/profile-page.
 import { HomeModule } from './feature/home/home.module';
 import { CampaignModule } from './feature/campaign/campaign.module';
 import { CharacterModule } from './feature/character/character.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CharacterModule } from './feature/character/character.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CampaignModule,
     BrowserAnimationsModule,

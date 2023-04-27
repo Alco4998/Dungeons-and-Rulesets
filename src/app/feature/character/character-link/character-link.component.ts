@@ -8,23 +8,26 @@ import { CharacterDataService } from '../character-data.service';
   styleUrls: ['./character-link.component.scss']
 })
 export class CharacterLinkComponent implements OnInit {
-  @Input() characterId?: number;
+  @Input() character_Id?: number;
   @Input() character?: Character;
 
   constructor(
-    characterDataService: CharacterDataService
+    private characterDataService: CharacterDataService
   ) { 
     if (this.character) {
-      this.characterId = this.character.characterId
-    } else if (this.characterId) {
-      this.character = characterDataService.getCharacterById(this.characterId)
+      this.character_Id = this.character.character_id
     } else {
-      console.error("character nor characterId Not defined");
-      
+      console.error("character nor character_Id Not defined");
     }
   }
 
   ngOnInit(): void {
+    this.characterDataService.getCharacterById$(this.character_Id!)
+    .subscribe((response) => {
+      if (response.items) {
+        this.character = response.items[0]
+      }
+    });
   }
 
 }

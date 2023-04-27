@@ -20,6 +20,6 @@ export class CampaignLinkComponent {
   }
 
   ngOnChanges() {
-    this.campaign = this.campaignDataService.getCampaignById(this.campaignId)
+    this.campaignDataService.getCampaignById(this.campaignId);
   }
 }

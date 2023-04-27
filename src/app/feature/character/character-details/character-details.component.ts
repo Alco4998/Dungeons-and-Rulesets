@@ -14,9 +14,16 @@ export class CharacterDetailsComponent {
 
   constructor(
     private characterDataService: CharacterDataService,
-    route: ActivatedRoute
-  ) {
-    const characterId = route.snapshot.params["id"]
-    this.character = this.characterDataService.getCharacterById(characterId as number)
-  };
+    private route: ActivatedRoute
+  ) {  };
+  
+  ngOnInit(): void {
+    const character_Id = this.route.snapshot.params["id"]
+    this.characterDataService.getCharacterById$(character_Id)
+    .subscribe((response) => {
+      if (response.items) {
+        this.character = response.items[0]
+      }
+    });
+  }
 }

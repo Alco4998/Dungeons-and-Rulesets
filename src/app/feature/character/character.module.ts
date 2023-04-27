@@ -13,7 +13,6 @@ import { MatInputModule } from '@angular/material/input';
 import { CharacterLinkComponent } from './character-link/character-link.component';
 
 
-
 @NgModule({
   declarations: [
     CharacterDetailsComponent,
