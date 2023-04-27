@@ -22,12 +22,15 @@ export class CharacterLinkComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.characterDataService.getCharacterById$(this.character_Id!)
-    .subscribe((response) => {
-      if (response.items) {
-        this.character = response.items[0]
-      }
-    });
+    if (!this.character)
+    {
+      this.characterDataService.getCharacterById(this.character_Id!)
+      .subscribe((response) => {
+        if (response.items) {
+          this.character = response.items[0]
+        }
+      });
+    }
   }
 
 }

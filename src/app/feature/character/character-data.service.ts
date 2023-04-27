@@ -12,11 +12,11 @@ export class CharacterDataService {
     private http: HttpClient
   ) { }
 
-  public getAllCharacters$() {
+  public getAllCharacters() {
     return this.http.get<OracleResponse<Character>>(characterRequest.readAll)
   }
 
-  public getCharacterById$(character_Id: number) {
-    return this.http.get<OracleResponse<Character>>(characterRequest.read + character_Id.toString())
+  public getCharacterById(id: number) {
+    return this.http.get<OracleResponse<Character>>(characterRequest.read + id.toString())
   }
 }

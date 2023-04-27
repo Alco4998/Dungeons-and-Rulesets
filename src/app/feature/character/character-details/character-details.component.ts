@@ -19,7 +19,7 @@ export class CharacterDetailsComponent {
   
   ngOnInit(): void {
     const character_Id = this.route.snapshot.params["id"]
-    this.characterDataService.getCharacterById$(character_Id)
+    this.characterDataService.getCharacterById(character_Id)
     .subscribe((response) => {
       if (response.items) {
         this.character = response.items[0]
