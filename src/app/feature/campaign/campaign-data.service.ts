@@ -30,8 +30,10 @@ export class CampaignDataService {
   }
 
   public getCharactersByCampaignId(campaignId: number) {
-    return this.http.get<OracleResponse<Character>>(CampaignRequest.readCharacters + campaignId).pipe(
-      map((response) => response.items)
-    );
+    return this.restHelperService.get<Character>(CampaignRequest.readCharacters + campaignId);
+  }
+
+  public updateCampaign(campaign: Campaign) {
+    return this.restHelperService.put<Campaign>(CampaignRequest.readCharacters + campaign.campaign_id, campaign);
   }
 }

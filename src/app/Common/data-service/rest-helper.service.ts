@@ -16,6 +16,10 @@ export class RestHelperService {
         return this.handleResponse<T>(this.http.get<OracleResponse<T>>(request))
     }
 
+    public put<T>(request: string, body: T) {
+        return this.handleResponse<T>(this.http.put<OracleResponse<T>>(request,body));
+    };
+
     public post<T>(request: string, body: T) {
         return this.handleResponse(this.http.post<OracleResponse<T>>(request, body))
     }
