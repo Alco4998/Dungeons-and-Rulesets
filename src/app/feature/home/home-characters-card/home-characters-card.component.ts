@@ -15,8 +15,6 @@ export class HomeCharactersCardComponent {
   constructor(
     characterDataService: CharacterDataService,
   ) {
-    this.characters$ = characterDataService.getAllCharacters().pipe(
-      map((response) => response.items),
-    )
+    this.characters$ = characterDataService.getAllCharacters()
   }
 }

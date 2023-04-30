@@ -1,22 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Character as Character } from './character';
 import { HttpClient } from '@angular/common/http';
-import { characterRequest } from './character-requests';
-import { OracleResponse } from '../data-service/response';
+import { CharacterRequest } from './character-requests';
+import { OracleResponse } from '../../Common/data-service/response';
+import { RestHelperService } from 'src/app/Common/data-service/rest-helper.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterDataService {
   constructor(
+    public restHelperService: RestHelperService,
     private http: HttpClient
   ) { }
 
   public getAllCharacters() {
-    return this.http.get<OracleResponse<Character>>(characterRequest.readAll)
+    return this.restHelperService.get<Character>(CharacterRequest.readAll)
   }
 
   public getCharacterById(id: number) {
-    return this.http.get<OracleResponse<Character>>(characterRequest.read + id.toString())
+    return this.restHelperService.get<Character>(CharacterRequest.read + id.toString())
   }
 }

@@ -1,9 +1,11 @@
-export class campaignRequest {
-    public static module = "https://g6561517105460a-rjp2y0z28teb18xs.adb.ap-sydney-1.oraclecloudapps.com/ords/dungeonsandrulsets/campaign";
-    public static get create()  { return this.module + "/create" }
-    public static get readAll() { return this.module + "/allcampaigns" }
-    public static get read()    { return this.module + "/campaign/" }
-    public static get readCharacters()    { return this.module + "/characters/" }
-    public static get update()  { return this.module + "/campaign/" }
-    public static get delete()  { return this.module + "/campaign/" }
+import { environment } from "src/environments/environment";
+
+export class CampaignRequest {
+    public static module = `${environment.BaseUrl}/campaign`;
+    public static create =  `${CampaignRequest.module}/create`;
+    public static readAll =  `${CampaignRequest.module}/allcampaigns`;
+    public static read =  `${CampaignRequest.module}/campaign/`;
+    public static readCharacters =  `${CampaignRequest.module}/characters/`;
+    public static update =  `${CampaignRequest.module}/campaign/`;
+    public static delete =  `${CampaignRequest.module}/campaign/`;
 }

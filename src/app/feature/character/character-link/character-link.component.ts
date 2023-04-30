@@ -25,9 +25,9 @@ export class CharacterLinkComponent implements OnInit {
     if (!this.character)
     {
       this.characterDataService.getCharacterById(this.character_Id!)
-      .subscribe((response) => {
-        if (response.items) {
-          this.character = response.items[0]
+      .subscribe((items) => {
+        if (items) {
+          this.character = items[0]
         }
       });
     }

@@ -13,6 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { CharacterModule } from '../character/character.module';
+import { RestHelperService } from 'src/app/Common/data-service/rest-helper.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CharacterModule } from '../character/character.module';
     MatListModule,
     CharacterModule,
   ],
+  providers: [RestHelperService],
   exports: [
     CampaignDetailsComponent,
     CampaignLinkComponent,

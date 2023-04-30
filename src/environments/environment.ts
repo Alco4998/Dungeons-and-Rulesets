@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  BaseUrl: "https://g6561517105460a-rjp2y0z28teb18xs.adb.ap-sydney-1.oraclecloudapps.com/ords/dungeonsandrulsets/"
 };
 
 /*
