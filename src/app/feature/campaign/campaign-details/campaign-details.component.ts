@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./campaign-details.component.scss']
 })
 export class CampaignDetailsComponent {
-  public campaign$?: Observable<Campaign | undefined>;
+  public campaign?: Campaign;
   public isEditing = false;
 
   constructor(
@@ -19,21 +19,27 @@ export class CampaignDetailsComponent {
     route: ActivatedRoute
   ) {
     const campaignId = route.snapshot.params["id"]
-    this.campaign$ = campaignDataService.getCampaignById(campaignId).pipe(
+    campaignDataService.getCampaignById(campaignId).pipe(
       switchMap((campaign) => {
         return campaignDataService.getCharactersByCampaignId(campaignId).pipe(
           map((players) => {
             campaign!.players = players;
-            return campaign;
+            return campaign
           }),
         );
       }),
-      tap((campaign) => console.log(campaign))
-    )
-    // this.campaign!.players = campaignDataService.getCharactersByCampaignId(campaignId);
+    ).subscribe((campaign) => this.campaign = campaign)
   };
 
-  /* public updateDescription(description: string) {
+  toggleEditing() {
+    if(this.isEditing) {
+      this.sendUpdate();
+    }
+
+    this.isEditing = !this.isEditing
+  }
+
+  public updateDescription(description: string) {
     if (description != this.campaign?.description) {
       this.campaign!.description = description;
       console.log(this.campaign?.description)
@@ -44,5 +50,9 @@ export class CampaignDetailsComponent {
     if (notes != this.campaign?.DMNotes) {
       this.campaign!.DMNotes = notes
     }
-  } */
+  }
+
+  public sendUpdate() {
+    console.log("Updating")
+  }
 }

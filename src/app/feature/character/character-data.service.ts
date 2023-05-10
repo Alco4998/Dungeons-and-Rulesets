@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { CharacterRequest } from './character-requests';
 import { OracleResponse } from '../../Common/data-service/response';
 import { RestHelperService } from 'src/app/Common/data-service/rest-helper.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,13 @@ export class CharacterDataService {
 
   public getCharacterById(id: number) {
     return this.restHelperService.get<Character>(CharacterRequest.read + id.toString())
+      .pipe(
+        map((items) => {
+          if (items) {
+            return items[0];
+          }
+          return;
+        }),
+      )
   }
 }

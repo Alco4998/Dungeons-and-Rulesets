@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SimpleChange } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from '../character';
 import { CharacterDataService } from '../character-data.service';
@@ -15,15 +15,11 @@ export class CharacterDetailsComponent {
   constructor(
     private characterDataService: CharacterDataService,
     private route: ActivatedRoute
-  ) {  };
-  
-  ngOnInit(): void {
-    const character_Id = this.route.snapshot.params["id"]
-    this.characterDataService.getCharacterById(character_Id)
-    .subscribe((items) => {
-      if (items) {
-        this.character = items[0]
-      }
-    });
+  ) { };
+
+  ngOnChanges(changes: SimpleChange): void {
+      const character_Id = this.route.snapshot.params["id"]
+      this.characterDataService.getCharacterById(character_Id)
+        .subscribe((items) => this.character = items);
   }
 }
