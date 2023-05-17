@@ -1,4 +1,4 @@
-import { Character } from "../character/character";
+import { Character } from "../character/models/character";
 
 export class Campaign {
     campaign_id!: number;

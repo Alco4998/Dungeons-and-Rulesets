@@ -1,7 +1,7 @@
 import { Component, SimpleChange } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Character } from '../character';
 import { CharacterDataService } from '../character-data.service';
+import { Character } from '../models/character';
 
 @Component({
   selector: 'app-character-details',

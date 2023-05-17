@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Character } from '../../character/character';
 import { CharacterDataService } from '../../character/character-data.service';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Character } from '../../character/models/character';
 
 @Component({
   selector: 'app-home-characters-card',

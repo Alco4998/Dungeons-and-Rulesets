@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
-import { Character } from '../character';
 import { CharacterDataService } from '../character-data.service';
+import { Character } from '../models/character';
 
 @Component({
   selector: 'app-character-link',

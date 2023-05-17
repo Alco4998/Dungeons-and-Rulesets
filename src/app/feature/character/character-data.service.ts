@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Character as Character } from './character';
 import { HttpClient } from '@angular/common/http';
-import { CharacterRequest } from './character-requests';
 import { OracleResponse } from '../../Common/data-service/response';
 import { RestHelperService } from 'src/app/Common/data-service/rest-helper.service';
 import { map } from 'rxjs/operators';
+import { Character } from './models/character';
+import { CharacterRequest } from './models/character-requests';
 
 @Injectable({
   providedIn: 'root'

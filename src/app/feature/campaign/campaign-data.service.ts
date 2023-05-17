@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { Campaign } from './campaign';
 import { HttpClient } from '@angular/common/http';
 import { OracleResponse } from '../../Common/data-service/response';
-import { Character } from '../character/character';
 import { map } from 'rxjs/operators';
 import { CampaignRequest } from './campaign-requests';
 import { RestHelperService } from 'src/app/Common/data-service/rest-helper.service';
+import { Character } from '../character/models/character';
 
 @Injectable({
   providedIn: 'root'

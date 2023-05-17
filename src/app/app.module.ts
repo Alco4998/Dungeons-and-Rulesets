@@ -19,6 +19,7 @@ import { CampaignModule } from './feature/campaign/campaign.module';
 import { CharacterModule } from './feature/character/character.module';
 import { HttpClientModule } from '@angular/common/http';
 import { RestHelperService } from './Common/data-service/rest-helper.service';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { RestHelperService } from './Common/data-service/rest-helper.service';
     HomeModule,
     CampaignModule,
     CharacterModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
