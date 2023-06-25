@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "angular.ng-template",
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint",
+        "eamodio.gitlens",
+        "trabpukcip.vscode-npm-scripts",
+        "ms-vscode.test-adapter-converter"
+    ]
+}
