@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CampaignDetailsComponent } from './feature/campaign/campaign-details/campaign-details.component';
-import { CharacterDetailsComponent } from './feature/character/character-details/character-details.component';
+import { CharacterDetailsComponent } from './feature/character/character-details-page/character-details-page.component';
 import { HomePageComponent } from './feature/home/home-page/home-page.component';
 
 const routes: Routes = [
