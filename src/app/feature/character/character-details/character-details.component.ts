@@ -17,9 +17,9 @@ export class CharacterDetailsComponent {
     private route: ActivatedRoute
   ) { };
 
-  ngOnChanges(changes: SimpleChange): void {
-      const character_Id = this.route.snapshot.params["id"]
-      this.characterDataService.getCharacterById(character_Id)
-        .subscribe((items) => this.character = items);
+  ngOnInit() {
+    const character_Id = this.route.snapshot.params["id"]
+    this.characterDataService.getCharacterById(character_Id)
+      .subscribe((items) => this.character = items);
   }
 }

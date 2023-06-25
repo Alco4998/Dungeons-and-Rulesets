@@ -18,13 +18,14 @@ import { HomeModule } from './feature/home/home.module';
 import { CampaignModule } from './feature/campaign/campaign.module';
 import { CharacterModule } from './feature/character/character.module';
 import { HttpClientModule } from '@angular/common/http';
-import { RestHelperService } from './Common/data-service/rest-helper.service';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { NavBarComponent } from './feature/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfilePageComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

@@ -39,8 +39,46 @@ body {
 a {
     color: white;
     text-decoration: none;
-    
+
     &:hover {
         color: lightgray;
+    }
+}
+
+.mat-card {
+    background-color: #d92e2e;
+}
+
+.mat-toolbar {
+    background-color: #d92e2e;
+    filter: blur(12);
+
+    .notALink {
+        color: white;
+        text-decoration: none;
+        transition: color 500ms ease;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    .active {
+        animation: stretch 2s ease infinite;
+        color: #65aaf7;
+
+        @keyframes stretch {
+            0% {
+                color: #65aaf7;
+            }
+
+            50% {
+                color: #2587f7;
+            }
+
+            100% {
+                color: #65aaf7;
+            }
+        }
     }
 }

@@ -7,4 +7,5 @@ export class CharacterRequest {
     public static update = `${CharacterRequest.module}/character/`;
     public static delete = `${CharacterRequest.module}/character/`;
     public static readAll = `${CharacterRequest.module}/allcharacters`;
+    public static ability = `${CharacterRequest.module}/abilities/`;
 }

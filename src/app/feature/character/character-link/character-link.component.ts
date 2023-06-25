@@ -23,7 +23,7 @@ export class CharacterLinkComponent {
 
     if (changes.character_Id) {
       this.characterDataService.getCharacterById(this.character_Id!)
-        .subscribe((items) => this.character = items);
+        .subscribe((character) => this.character = character);
     }
   }
 }

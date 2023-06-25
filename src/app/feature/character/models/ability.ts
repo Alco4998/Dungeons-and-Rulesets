@@ -1,4 +1,5 @@
-class Ability {
+export class Ability {
+    ability_score_id!: number
     name!: string
-    value!: number
+    score!: number
 }
