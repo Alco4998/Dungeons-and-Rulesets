@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Campaign } from './campaign';
 import { HttpClient } from '@angular/common/http';
-import { OracleResponse } from '../../Common/data-service/response';
 import { map } from 'rxjs/operators';
 import { CampaignRequest } from './campaign-requests';
 import { RestHelperService } from 'src/app/Common/data-service/rest-helper.service';

@@ -39,3 +39,43 @@ mat-form-field {
     width: max-content;
   }
 }
+
+.ability-group {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+
+  .stack {
+    display: block;
+    justify-content: center;
+
+    margin: 0.5rem;
+    padding: 0.2rem;
+    width: 8%;
+
+    border: 2px black;
+    border-style: solid;
+    border-radius: 1rem;
+
+    .ability-name {}
+
+    .ability-score {
+      width: fit-content;
+      margin: auto;
+      padding: 0 0.5rem;
+
+      border: 2px black;
+      border-style: solid;
+      border-radius: 1rem;
+    }
+    
+    .ability-modifier {
+      font-size: 2rem;
+      margin: 0.5rem auto;
+    }
+  }
+
+  .mat-input-element:disabled {
+    border-style: none;
+  }
+}

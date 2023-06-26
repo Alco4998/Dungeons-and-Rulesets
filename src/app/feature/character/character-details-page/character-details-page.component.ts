@@ -28,11 +28,8 @@ export class CharacterDetailsComponent implements OnChanges, OnInit {
     this.characterDataService.getCharacterById(character_Id)
       .subscribe((items) => this.character = items);
   }
-  ;
 
-  /* public ngOnChanges(changes: SimpleChange): void {
-      const character_Id = this.route.snapshot.params["id"]
-      this.characterDataService.getCharacterById(character_Id)
-        .subscribe((items) => this.character = items);
-  } */
+  public long(thing: any) {
+    console.log(thing);
+  }
 }

@@ -23,12 +23,18 @@ export class CharacterDataService {
     return this.restHelperService.get<Character>(CharacterRequest.read + id.toString())
       .pipe(
         map((items) => items ? items[0] : undefined),
-        map((character) => { if (!character) { throw new Error("Cannot Find Character") } else { return character } }),
-        // withLatestFrom(this.restHelperService.get<Ability>(CharacterRequest.ability + id.toString())),
-        switchMap((character) => this.restHelperService.get<Ability>(CharacterRequest.ability + character.character_id.toString()).pipe(
-          tap((character) => console.log(character)),
-          map((abilities) => { character!.abilities = abilities; return character })
-        )),
+        map((character) => {
+          if (!character) {
+            throw new Error("Cannot Find Character")
+          }
+          if (!character.abilities) {
+            return;
+          }
+          
+          // Oracle won't let us return a normal JSON object so we have to turn the JSON string to the object
+          character.abilities = JSON.parse(character.abilities as unknown as string) as Ability[];
+          return character
+        }),
       )
   }
 }

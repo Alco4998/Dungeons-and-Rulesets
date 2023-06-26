@@ -13,9 +13,24 @@
         <mat-card-content *ngIf="isEditing" class="dashboard-card-content">
           <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput #name [value]="character!.name" (change)="character!.name = name.value"/>
+            <input matInput #name [value]="character!.name" (change)="character!.name = name.value" />
           </mat-form-field> <br>
-          <button mat-raised-button class="save-button">test</button>
+        </mat-card-content>
+        <mat-card-content *ngIf="!isEditing" class="dashboard-card-content">
+          <div class="ability-group">
+            <div class="stack" *ngFor="let ability of character.abilities">
+              <div class="ability-name">
+                {{ability.name}}
+              </div>
+              <div class="ability-modifier">
+                {{ability.offset}}
+              </div>
+              <div class="ability-score">
+                {{ability.score}}
+              </div>
+            </div>
+          </div>
+          <button mat-raised-button type="submit" (click)="long(character)">submit</button>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>
